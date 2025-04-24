@@ -39,14 +39,43 @@
 }
 
 .glass-card {
-  @apply bg-white/5 backdrop-blur-lg border border-primary/20 rounded-xl;
+  @apply bg-black/30 backdrop-blur-lg border border-[#D4AF37]/20;
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-primary to-yellow-200 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#D4AF37] to-yellow-200 bg-clip-text text-transparent;
 }
 
 .hover-scale {
   @apply transition-transform duration-200 hover:scale-105;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
