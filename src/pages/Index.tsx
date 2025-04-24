@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import FeatureCard from '@/components/FeatureCard';
 import ChatDialog from '@/components/ChatDialog';
+import ChatBubble from '@/components/ChatBubble';
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -104,4 +105,3 @@ const Index = () => {
 };
 
 export default Index;
-
