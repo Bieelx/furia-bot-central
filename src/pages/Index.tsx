@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ShoppingBag, Calendar, Users, MessageSquare, Camera, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,36 +39,35 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1A1F2C] to-[#2D243A]">
+    <div className="min-h-screen bg-gradient-to-b from-[#f6f6f6] to-[#f9f9f9]">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with Light Theme */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Background Overlay with Gradient */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#f3f3f3] leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#1A1F2C] leading-tight">
             Welcome to the <span className="text-[#D4AF37]">FURIA</span> Experience
           </h1>
-          <p className="text-xl md:text-2xl text-[#f3f3f3]/90 mb-10 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-[#1A1F2C]/80 mb-10 max-w-3xl mx-auto">
             Where passion meets competition
           </p>
           <Button 
-            className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-[#1A1F2C] font-bold text-lg py-6 px-10 rounded-md"
+            className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-white font-bold text-lg py-6 px-10 rounded-md"
           >
             Explore
           </Button>
         </div>
       </section>
 
-      {/* Teams Section */}
-      <section className="py-20 px-4 bg-[#1A1F2C]">
+      {/* Rest of the sections with adjusted colors for light theme */}
+      <section className="py-20 px-4 bg-[#f6f6f6]">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl font-bold text-[#f3f3f3]">Our Teams</h2>
+            <h2 className="text-3xl font-bold text-[#1A1F2C]">Our Teams</h2>
             <div className="flex gap-4">
               {teams.map((team, idx) => (
                 <button
@@ -77,8 +75,8 @@ const Index = () => {
                   onClick={() => setActiveTeam(idx)}
                   className={`px-4 py-2 font-medium rounded transition-all ${
                     activeTeam === idx
-                      ? "bg-[#D4AF37] text-[#1A1F2C]"
-                      : "text-[#f3f3f3] border border-[#D4AF37]/30 hover:border-[#D4AF37]"
+                      ? "bg-[#D4AF37] text-white"
+                      : "text-[#1A1F2C] border border-[#D4AF37]/30 hover:border-[#D4AF37]"
                   }`}
                 >
                   {team.name}
@@ -90,15 +88,15 @@ const Index = () => {
           <div className="relative h-[400px] rounded-xl overflow-hidden">
             <div className="absolute inset-0 bg-cover bg-center transition-all duration-500" 
                  style={{ backgroundImage: `url(${teams[activeTeam].image})` }}>
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
             </div>
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <h3 className="text-4xl font-bold text-[#D4AF37] mb-4">{teams[activeTeam].name}</h3>
-              <div className="text-[#f3f3f3]/90 mb-4">
+              <div className="text-[#1A1F2C]/90 mb-4">
                 <p className="text-xl mb-2">Players: {teams[activeTeam].players}</p>
                 <p className="text-xl">Achievement: {teams[activeTeam].achievements}</p>
               </div>
-              <Button className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-[#1A1F2C] font-medium w-fit">
+              <Button className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-white font-medium w-fit">
                 Team Details
               </Button>
             </div>
@@ -107,27 +105,27 @@ const Index = () => {
       </section>
 
       {/* Next Matches Section */}
-      <section className="py-20 px-4 bg-[#2D243A]/80">
+      <section className="py-20 px-4 bg-[#f9f9f9]/80">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#f3f3f3] mb-12">Upcoming Matches</h2>
+          <h2 className="text-3xl font-bold text-[#1A1F2C] mb-12">Upcoming Matches</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {matches.map((match, idx) => (
               <Card key={idx} className="glass-card border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <div className="text-2xl font-bold text-[#f3f3f3]">FURIA vs {match.opponent}</div>
+                    <div className="text-2xl font-bold text-[#1A1F2C]">FURIA vs {match.opponent}</div>
                     <div className="bg-[#D4AF37]/20 text-[#D4AF37] px-3 py-1 rounded text-sm">{match.competition}</div>
                   </div>
                   <div className="flex items-center mb-4">
                     <Calendar className="w-5 h-5 text-[#D4AF37] mr-2" />
-                    <span className="text-[#f3f3f3]/80">{match.date}</span>
+                    <span className="text-[#1A1F2C]/80">{match.date}</span>
                   </div>
                   <div className="flex justify-between">
-                    <Button variant="outline" className="border-[#D4AF37]/30 hover:border-[#D4AF37] text-[#f3f3f3]">
+                    <Button variant="outline" className="border-[#D4AF37]/30 hover:border-[#D4AF37] text-[#1A1F2C]">
                       Set Reminder
                     </Button>
-                    <Button className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-[#1A1F2C]">
+                    <Button className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-white">
                       Watch
                     </Button>
                   </div>
@@ -139,18 +137,18 @@ const Index = () => {
       </section>
 
       {/* Media Section */}
-      <section className="py-20 px-4 bg-[#1A1F2C]">
+      <section className="py-20 px-4 bg-[#f6f6f6]">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl font-bold text-[#f3f3f3]">Media Gallery</h2>
-            <Button variant="outline" className="border-[#D4AF37]/30 hover:border-[#D4AF37] text-[#f3f3f3]">
+            <h2 className="text-3xl font-bold text-[#1A1F2C]">Media Gallery</h2>
+            <Button variant="outline" className="border-[#D4AF37]/30 hover:border-[#D4AF37] text-[#1A1F2C]">
               View All <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[...Array(8)].map((_, idx) => (
-              <div key={idx} className="aspect-square bg-[#2D243A]/50 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+              <div key={idx} className="aspect-square bg-[#f9f9f9]/50 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
                 <div className="w-full h-full bg-cover bg-center" 
                      style={{backgroundImage: `url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?&auto=format&fit=crop&q=80&w=800)`}}>
                 </div>
@@ -161,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-[#1A1F2C]">
+      <footer className="py-12 px-4 bg-[#f6f6f6]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <img
@@ -169,24 +167,24 @@ const Index = () => {
               alt="FURIA Logo"
               className="h-16 mb-6"
             />
-            <p className="text-[#f3f3f3]/70">
+            <p className="text-[#1A1F2C]/70">
               FURIA is a Brazilian esports organization with teams competing 
               at the highest level across multiple games.
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#f3f3f3]">Quick Links</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#1A1F2C]">Quick Links</h3>
             <div className="grid grid-cols-2 gap-2">
-              <a href="#" className="text-[#f3f3f3]/70 hover:text-[#D4AF37] transition-colors">Store</a>
-              <a href="#" className="text-[#f3f3f3]/70 hover:text-[#D4AF37] transition-colors">Teams</a>
-              <a href="#" className="text-[#f3f3f3]/70 hover:text-[#D4AF37] transition-colors">Schedule</a>
-              <a href="#" className="text-[#f3f3f3]/70 hover:text-[#D4AF37] transition-colors">Gallery</a>
-              <a href="#" className="text-[#f3f3f3]/70 hover:text-[#D4AF37] transition-colors">Partners</a>
-              <a href="#" className="text-[#f3f3f3]/70 hover:text-[#D4AF37] transition-colors">About Us</a>
+              <a href="#" className="text-[#1A1F2C]/70 hover:text-[#D4AF37] transition-colors">Store</a>
+              <a href="#" className="text-[#1A1F2C]/70 hover:text-[#D4AF37] transition-colors">Teams</a>
+              <a href="#" className="text-[#1A1F2C]/70 hover:text-[#D4AF37] transition-colors">Schedule</a>
+              <a href="#" className="text-[#1A1F2C]/70 hover:text-[#D4AF37] transition-colors">Gallery</a>
+              <a href="#" className="text-[#1A1F2C]/70 hover:text-[#D4AF37] transition-colors">Partners</a>
+              <a href="#" className="text-[#1A1F2C]/70 hover:text-[#D4AF37] transition-colors">About Us</a>
             </div>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-[#f3f3f3]">Connect</h3>
+            <h3 className="text-xl font-semibold mb-4 text-[#1A1F2C]">Connect</h3>
             <div className="flex space-x-4 mb-4">
               <a href="#" className="w-10 h-10 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] hover:bg-[#D4AF37]/20 transition-colors">
                 <span className="sr-only">Twitter</span>
@@ -207,24 +205,23 @@ const Index = () => {
                 </svg>
               </a>
             </div>
-            <p className="text-[#f3f3f3]/70 text-sm">
+            <p className="text-[#1A1F2C]/70 text-sm">
               © 2025 FURIA Esports. All rights reserved.
             </p>
           </div>
         </div>
       </footer>
-
-      {/* Chat Button (Floating) */}
+      
+      {/* Floating Chat Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <button 
           onClick={() => setIsChatOpen(true)} 
           className="w-14 h-14 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg hover:bg-[#D4AF37]/80 transition-all duration-300 hover:scale-110"
         >
-          <MessageSquare className="text-[#1A1F2C]" />
+          <MessageSquare className="text-white" />
         </button>
       </div>
 
-      {/* Chat Dialog */}
       <ChatDialog open={isChatOpen} onOpenChange={setIsChatOpen} />
     </div>
   );
