@@ -9,11 +9,11 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="glass-card p-6 hover-scale">
+    <div className="glass-card p-6 hover:bg-white/10 transition-colors duration-300 rounded-xl">
       <div className="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center mb-4">
         <Icon className="text-purple-400" size={24} />
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
