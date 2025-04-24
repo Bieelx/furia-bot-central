@@ -1,11 +1,14 @@
 
+import { useState } from 'react';
 import { Brain, Calendar, Users, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import FeatureCard from '@/components/FeatureCard';
-import ChatBubble from '@/components/ChatBubble';
+import ChatDialog from '@/components/ChatDialog';
 
 const Index = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   const features = [
     {
       icon: Brain,
@@ -38,19 +41,22 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-yellow-200 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#f3f3f3]">
                 Meet FURIA Bot – Your Ultimate CS Companion
               </h1>
-              <p className="text-lg text-gray-300 mb-8">
+              <p className="text-lg text-[#f3f3f3]/90 mb-8">
                 Your all-in-one assistant for FURIA Esports. Get instant updates on matches,
                 dive into team trivia, and discover exclusive insights about your favorite CS team.
               </p>
-              <Button className="bg-purple-500 hover:bg-purple-600 text-lg py-6 px-8">
+              <Button 
+                onClick={() => setIsChatOpen(true)}
+                className="bg-primary hover:bg-primary/90 text-lg py-6 px-8"
+              >
                 Try the Bot
               </Button>
             </div>
             <div className="glass-card p-6 rounded-xl">
-              <div className="space-y-4">
+              <div className="space-y-4 animate-fade-in">
                 <ChatBubble message="When is the next game?" isBot={false} />
                 <ChatBubble message="Our next match is against G2, this Saturday at 6PM!" isBot={true} />
               </div>
@@ -62,7 +68,7 @@ const Index = () => {
       {/* Features Section */}
       <section id="features" className="py-20 px-4 bg-[#221F26]/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#f3f3f3]">
             Everything you need to stay connected
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,8 +83,8 @@ const Index = () => {
       <footer className="py-12 px-4 bg-[#1A1F2C]">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">Built with</h3>
-            <div className="flex justify-center gap-4 text-gray-400">
+            <h3 className="text-xl font-semibold mb-4 text-[#f3f3f3]">Built with</h3>
+            <div className="flex justify-center gap-4 text-[#f3f3f3]/80">
               <span>React</span>
               <span>•</span>
               <span>Tailwind CSS</span>
@@ -86,13 +92,16 @@ const Index = () => {
               <span>ChatGPT API</span>
             </div>
           </div>
-          <div className="text-gray-500 text-sm">
+          <div className="text-[#f3f3f3]/60 text-sm">
             © 2025 FURIA Bot. This is a demo project.
           </div>
         </div>
       </footer>
+
+      <ChatDialog open={isChatOpen} onOpenChange={setIsChatOpen} />
     </div>
   );
 };
 
 export default Index;
+

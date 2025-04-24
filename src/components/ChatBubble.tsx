@@ -10,8 +10,8 @@ const ChatBubble = ({ message, isBot = false }: ChatBubbleProps) => {
       <div
         className={`rounded-2xl px-4 py-2 max-w-[80%] ${
           isBot
-            ? 'bg-purple-500/20 text-white rounded-tl-none border border-purple-500/20'
-            : 'bg-purple-500 text-white rounded-tr-none'
+            ? 'bg-[#2D243A] text-[#f3f3f3] rounded-tl-none border border-primary/20'
+            : 'bg-primary text-[#f3f3f3] rounded-tr-none'
         }`}
       >
         {message}
@@ -21,3 +21,4 @@ const ChatBubble = ({ message, isBot = false }: ChatBubbleProps) => {
 };
 
 export default ChatBubble;
+
