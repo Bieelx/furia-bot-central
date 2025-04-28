@@ -1,0 +1,147 @@
+/* Navbar Container */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-btn {
+    display: block;
+    color: #1A1F2C;
+  }
+  
+  /* Nav Sections */
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .nav-left,
+    .nav-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+  }
+  
+  .nav-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo-img {
+    height: 3rem;
+    width: auto;
+  }
+  
+  .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1A1F2C;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #D4AF37;
+  }
+  
+  .nav-underline {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover .nav-underline {
+    width: 100%;
+  }
+  
+  .nav-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .mobile-space {
+    display: none;
+  }
+  
+  @media (max-width: 767px) {
+    .mobile-space {
+      width: 1.5rem;
+    }
+  }
+  
+  /* Mobile Nav */
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 1rem 0;
+  }
+  
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .mobile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 2rem;
+    color: #1A1F2C;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-link:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+  }
+  
+  .mobile-cta {
+    margin: 1rem 2rem 0;
+    background-color: #D4AF37;
+    color: #1A1F2C;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-cta:hover {
+    background-color: rgba(212, 175, 55, 0.8);
+  }
+
+  /* Esconde o menu hambúrguer no desktop */
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+      display: none;
+    }
+  }
+  

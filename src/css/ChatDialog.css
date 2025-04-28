@@ -1,0 +1,150 @@
+/* Chatbot Dialog */
+.chatbot-dialog-content {
+    background-color: rgba(26, 31, 44, 0.95) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* FLEX para organizar as seções */
+    animation: scale-in 0.3s ease;
+    height: 500px;
+    max-height: 80vh;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  
+  
+  /* Header */
+  .chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatbot-header-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .chatbot-avatar {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 9999px;
+  }
+  
+  .chatbot-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .chatbot-close-btn {
+    color: #000000;
+    transition: color 0.3s ease;
+  }
+  
+  .chatbot-close-btn:hover {
+    color: #D4AF37;
+  }
+  
+  .chatbot-close-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  /* Messages */
+  .chatbot-messages {
+    flex: 1; /* Faz o espaço do histórico de mensagens ocupar o restante */
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  
+  /* Input */
+  .chatbot-input-container {
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatbot-input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .chatbot-input {
+    flex: 1;
+    background-color: #2D243A;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    color: #000000;
+    font-size: 0.875rem;
+    outline: none;
+  }
+  
+  .chatbot-input::placeholder {
+    color: rgba(243, 243, 243, 0.5);
+  }
+  
+  .chatbot-input:focus {
+    border-color: rgba(212, 175, 55, 0.5);
+  }
+  
+  .chatbot-send-button {
+    background-color: #D4AF37;
+    color: #1A1F2C;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chatbot-send-button:hover {
+    background-color: rgba(212, 175, 55, 0.8);
+  }
+  
+  .chatbot-send-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .chatbot-hint {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(243, 243, 243, 0.5);
+  }
+
+  .chatbot-typing {
+    font-size: 0.875rem;
+    color: rgba(243, 243, 243, 0.6);
+    font-style: italic;
+    animation: blink 1s infinite;
+    padding-left: 0.5rem;
+  }
+  
+  /* Animação para o texto \"digitando...\" */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  
+  
+  /* Animations */
+  @keyframes scale-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  

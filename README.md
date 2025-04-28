@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
+# 🐆 FURIA Central Bot
 
-## Project info
+Este é um projeto desenvolvido como desafio técnico para a vaga de **Assistente de Engenharia de Software - FURIA Tech**.
 
-**URL**: https://lovable.dev/projects/454ef72e-36a6-4185-9129-3a9b5ba9cdc5
+A proposta consiste em criar uma **landing page** moderna para fãs da FURIA, com acesso rápido a informações como times, próximos jogos e mídia — além de um **chatbot interativo** que simula a experiência de falar diretamente com o time!
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Funcionalidades
 
-**Use Lovable**
+- 🏠 **Landing page** com:
+  - Seções de Times, Próximos Jogos, Galeria de Mídia
+  - Visual moderno, tema claro com tons dourados e off-white
+  - Design responsivo para desktop e mobile
+- 🤖 **Chatbot FURIA Bot**:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/454ef72e-36a6-4185-9129-3a9b5ba9cdc5) and start prompting.
+  - Abre em forma de pop-up no canto inferior direito
+  - Responde perguntas sobre:
+    - Times de CS2
+    - Próximos jogos
+    - Histórico de títulos
+  - Respostas objetivas e organizadas
+  - Animação de "digitando..." para simular conversação real
 
-Changes made via Lovable will be committed automatically to this repo.
+- ⚡ **Integração com IA (Google Gemini 2.0 Flash)**:
+  - API configurada para responder apenas sobre FURIA Esports
+  - Instruções de formatação para respostas limpas e diretas
+  - Mensagens com base em contexto atualizado manualmente
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Tecnologias Utilizadas
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Frontend**:
 
-Follow these steps:
+  - React + Vite
+  - TailwindCSS customizado
+  - Lucide-React (ícones)
+  - Shadcn/UI (componentes Dialog)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Backend**:
+  - Node.js + Express
+  - Integração com API Gemini (Google AI Studio)
+  - Variáveis de ambiente com dotenv
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/454ef72e-36a6-4185-9129-3a9b5ba9cdc5) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🧩 Estrutura do Projeto
