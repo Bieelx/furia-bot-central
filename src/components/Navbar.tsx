@@ -2,16 +2,20 @@ import { useState } from 'react';
 import { Menu, X, ShoppingBag, Calendar, Users, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import '../css/navbar.css';
+import { url } from 'node:inspector';
+import { Link } from "react-router-dom";
+import furialogo from '../assets/FuriaLogo.svg'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Store", icon: <ShoppingBag className="nav-icon" /> },
-    { name: "Next Matches", icon: <Calendar className="nav-icon" /> },
-    { name: "Teams", icon: <Users className="nav-icon" /> },
-    { name: "Media", icon: <Camera className="nav-icon" /> },
+    { name: "Loja", icon: <ShoppingBag className="nav-icon" />, href: "https://furia.gg" },
+    { name: "Próximos jogos", icon: <Calendar className="nav-icon" />, href: "#jogos" },
+    { name: "Times", icon: <Users className="nav-icon" />, href: "#times" },
+    { name: "Mídia", icon: <Camera className="nav-icon" />, href: "#media" },
   ];
+  
 
   return (
     <nav className="navbar">
@@ -35,7 +39,7 @@ const Navbar = () => {
 
         <div className="nav-logo">
           <img
-            src="/lovable-uploads/8592197a-d9fc-4b86-8aa0-63492ccb0f54.png"
+            src= {furialogo}
             alt="FURIA Logo"
             className="logo-img"
           />

@@ -50,11 +50,6 @@ const handleSendMessage = async () => {
       <DialogContent className="chatbot-dialog-content">
         <div className="chatbot-header">
           <div className="chatbot-header-info">
-            <img
-              src="/lovable-uploads/8592197a-d9fc-4b86-8aa0-63492ccb0f54.png"
-              alt="FURIA Bot"
-              className="chatbot-avatar"
-            />
             <h2 className="chatbot-title">FURIA Bot</h2>
           </div>
           <button
@@ -71,7 +66,7 @@ const handleSendMessage = async () => {
           ))}
 
           {isBotTyping && (
-            <div className="chatbot-typing">FURIA Bot is typing...</div>
+            <div className="chatbot-typing">FURIA Bot está digitando...</div>
          )}
         </div>
 
@@ -83,7 +78,7 @@ const handleSendMessage = async () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-              placeholder="Ask about matches, teams, or trivia..."
+              placeholder="Pergunte algo..."
               className="chatbot-input"
             />
             <Button
@@ -94,7 +89,7 @@ const handleSendMessage = async () => {
             </Button>
           </div>
           <div className="chatbot-hint">
-            Ask about match schedules, team rosters, or trivia
+          Pergunte sobre as próximas partidas, times ou títulos...
           </div>
         </div>
       </DialogContent>

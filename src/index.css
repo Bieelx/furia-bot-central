@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --background: 0 0% 97.6%; /* Soft off-white like #f6f6f6 */
-    --foreground: 240 10% 3.9%; /* Near-black */
-    --primary: 43 57% 52%; /* Soft Gold */
+    --background: #FAF9F6; 
+    --foreground: 240 10% 3.9%; 
+    --primary: 43 57% 52%;
     --primary-foreground: 0 0% 95%;
     --secondary: 52 97% 90%;
     --secondary-foreground: 222.2 47.4% 11.2%;

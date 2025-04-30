@@ -6,16 +6,46 @@ import Navbar from '@/components/Navbar';
 import ChatDialog from '@/components/ChatDialog';
 
 import FuriaBanner from '../assets/FuriaBanner.webp';
+import FuriaLogo from '../assets/FuriaLogo.svg'
+import post1 from '../assets/post1.jpeg';
+import post2 from '../assets/post2.jpeg';
+import post3 from '../assets/post3.jpg';
+import post4 from '../assets/post4.jpg';
+import post5 from '../assets/post5.jpg';
+import post6 from '../assets/post6.jpg';
+import post7 from '../assets/post7.jpg';
+import post8 from '../assets/post8.jpg';
+
+import cs2banner from '../assets/cs2banner.webp';
+import valorantbanner from '../assets/valorant.jpg';
+import lolbanner from '../assets/Lol Banner.webp';
+
+import twitter from '../assets/Xicon.svg'
+import instagram from '../assets/instagram.svg'
+import youtube from '../assets/youtube.svg'
+
 import '../Index.css';
+
+const imagens = [
+  post1,
+  post2,
+  post3,
+  post4,
+  post5,
+  post6,
+  post7,
+  post8
+];
+
 
 const Index = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [activeTeam, setActiveTeam] = useState(0);
 
   const matches = [
-    { opponent: "G2", date: "April 28, 2025", time: "18:00", competition: "ESL Pro League" },
-    { opponent: "LOUD", date: "May 2, 2025", time: "15:30", competition: "BLAST Premier" },
-    { opponent: "NAVI", date: "May 10, 2025", time: "20:00", competition: "IEM Cologne" }
+    { opponent: "G2", date: "28/04/2025", time: "18:00", competition: "ESL Pro League" },
+    { opponent: "LOUD", date: "03/05/2025", time: "15:30", competition: "BLAST Premier" },
+    { opponent: "NAVI", date: "10/05/2025", time: "20:00", competition: "IEM Cologne" }
   ];
 
   const teams = [
@@ -23,24 +53,29 @@ const Index = () => {
       name: "CS2",
       players: "KSCERATO, yuurih, FalleN, Molodoy, Yekindar",
       achievements: "ESL Pro League Season 16 Champions",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1920"
+      image: cs2banner
     },
     {
       name: "VALORANT",
       players: "dgzin, Quick, Khalil, Mazin, frz",
       achievements: "VCT Americas 2023 Finalists",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=1920"
+      image: valorantbanner
     },
     {
-      name: "APEX LEGENDS",
-      players: "fluaxx, Raf, baga",
+      name: "League of Legends",
+      players: "Guigo, Tatu, Tutsz, Ayu, JoJo",
       achievements: "ALGS 2022 Split 2 Champions",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=1920"
+      image: lolbanner
     }
   ];
 
-  const links = ["Store", "Teams", "Schedule", "Gallery", "Partners", "About Us"];
-  const socialIcons = ["Twitter", "Instagram", "YouTube"];
+  const links = ["Loja", "Times", "Próximos Jogos", "Galeria"];
+  const socialIcons = [
+    { name: "X", img: twitter, url: "https://twitter.com/furia" },
+    { name: "Instagram", img: instagram, url: "https://instagram.com/furiagg" },
+    { name: "YouTube", img: youtube, url: "https://www.youtube.com/@FURIAgg" }
+  ];
+  
 
   return (
     <div className="index-container">
@@ -65,7 +100,7 @@ const Index = () => {
       <section className="teams-section">
         <div className="teams-container">
           <div className="teams-header">
-            <h2 className="teams-title">Our Teams</h2>
+            <h2 className="teams-title">Nossos times</h2>
             <div className="teams-tabs">
               {teams.map((team, idx) => (
                 <button
@@ -86,10 +121,10 @@ const Index = () => {
             <div className="team-info">
               <h3 className="team-name">{teams[activeTeam].name}</h3>
               <div className="team-description">
-                <p>Players: {teams[activeTeam].players}</p>
-                <p>Achievement: {teams[activeTeam].achievements}</p>
+                <p>Jogadores: {teams[activeTeam].players}</p>
+                <p>Prêmios: {teams[activeTeam].achievements}</p>
               </div>
-              <Button className="team-button">Team Details</Button>
+              <Button className="team-button">Mais detalhes</Button>
             </div>
           </div>
         </div>
@@ -98,7 +133,7 @@ const Index = () => {
       {/* Upcoming Matches */}
       <section className="matches-section">
         <div className="matches-container">
-          <h2 className="section-title">Upcoming Matches</h2>
+          <h2 className="section-title">Próximos jogos</h2>
           <div className="matches-grid">
             {matches.map((match, idx) => (
               <Card key={idx} className="match-card">
@@ -112,8 +147,8 @@ const Index = () => {
                     <span className="match-date-text">{match.date}</span>
                   </div>
                   <div className="match-actions">
-                    <Button variant="outline" className="match-button-outline">Set Reminder</Button>
-                    <Button className="match-button-fill">Watch</Button>
+                    <Button variant="outline" className="match-button-outline">Me lembre</Button>
+                    <Button className="match-button-fill">Assistir</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -122,64 +157,79 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Media Gallery */}
+      {/* Galeria */}
       <section className="media-section">
         <div className="media-container">
           <div className="media-header">
-            <h2 className="section-title">Media Gallery</h2>
+            <h2 className="section-title">Galeria</h2>
             <Button variant="outline" className="media-button">
-              View All <ChevronDown className="media-icon" />
+              Ver tudo <ChevronDown className="media-icon" />
             </Button>
           </div>
           <div className="media-grid">
-            {[...Array(8)].map((_, idx) => (
+            {imagens.map((imagem, idx) => (
               <div key={idx} className="media-card">
-                <div className="media-thumb" 
-                  style={{ backgroundImage: `url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?&auto=format&fit=crop&q=80&w=800)` }}>
-                </div>
+                <div
+                  className="media-thumb"
+                  style={{ backgroundImage: `url(${imagem})` }}
+                ></div>
               </div>
             ))}
-          </div>
+        </div>
+
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer-section">
-        <div className="footer-container">
-          <div className="footer-about">
-            <img
-              src="/lovable-uploads/8592197a-d9fc-4b86-8aa0-63492ccb0f54.png"
-              alt="FURIA Logo"
-              className="footer-logo"
-            />
-            <p className="footer-text">
-              FURIA is a Brazilian esports organization with teams competing
-              at the highest level across multiple games.
-            </p>
-          </div>
-          <div className="footer-links">
-            <h3 className="footer-title">Quick Links</h3>
-            <div className="footer-link-grid">
-              {links.map((link, index) => (
-                <a key={index} href="#" className="footer-link">{link}</a>
-              ))}
-            </div>
-          </div>
-          <div className="footer-social">
-            <h3 className="footer-title">Connect</h3>
-            <div className="footer-icons">
-              {socialIcons.map((icon, index) => (
-                <a key={index} href="#" className="social-icon" aria-label={icon}>
-                  {icon}
-                </a>
-              ))}
-            </div>
-            <p className="footer-copy">© 2025 FURIA Esports. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+{/* Footer */}
+<footer className="footer-section">
+  <div className="footer-container">
+    
+    {/* Logo da FURIA */}
+    <div className="footer-about">
+      <img
+        src={FuriaLogo}
+        alt="FURIA Logo"
+        className="footer-logo"
+      />
+    </div>
 
-      {/* Floating Chat Button */}
+    {/* Links */}
+    <div className="footer-links">
+      <h3 className="footer-title">Links</h3>
+      <div className="footer-link-grid">
+        {links.map((link, index) => (
+          <a key={index} href="#" className="footer-link">
+            {link}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {/* Social Media */}
+    <div className="footer-social">
+      <h3 className="footer-title">Siga FURIA</h3>
+      <div className="footer-icons">
+        {socialIcons.map((icon, index) => (
+          <a
+            key={index}
+            href={icon.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label={icon.name}
+          >
+            <img src={icon.img} alt={icon.name} className="social-img" />
+          </a>
+        ))}
+      </div>
+      <p className="footer-copy">© 2025 FURIA Esports. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+
+      {/* ChatBot botão*/}
       <div className="chat-button-wrapper">
         <button onClick={() => setIsChatOpen(true)} className="chat-button">
           <MessageSquare className="chat-icon" />
