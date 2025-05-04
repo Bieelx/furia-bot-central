@@ -31,7 +31,7 @@ import cs2_yuurih from '../assets/jogadores/cs2_yuurih.webp';
 import cs2_molodoy from '../assets/jogadores/cs2_Molodoy.png';
 import cs2_yekindar from '../assets/jogadores/cs2_yekindar.png';
 
-import '../Index.css';
+import '../index.css';
 
 const imagens = [
   post1,
