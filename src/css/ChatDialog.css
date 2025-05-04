@@ -155,7 +155,7 @@
   font-size: 0.95rem;
   line-height: 1.5;
   word-break: break-word;
-  white-space: pre-line; /* permite quebra de linha com \n */
+  white-space: pre-line; 
 }
 
 /* Bolha do bot */
@@ -176,8 +176,8 @@
 
 /* ---------- Ajustes Gerais ---------- */
 .chatbot-dialog-content {
-  width: min(90vw, 500px);   /* ocupar até 90% da tela, mas no máximo 500px */
-  max-height: 80vh;          /* não ocupar mais que 80% da altura */
+  width: min(90vw, 500px);   
+  max-height: 80vh;          
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -189,28 +189,34 @@
 /* ---------- Mobile (<640px) ---------- */
 @media (max-width: 640px) {
   .chatbot-dialog-content {
-    width: 100vw;            /* ocupa toda largura */
-    height: 100vh;           /* ocupa toda altura */
+    width: 100vw;            
+    height: 100vh;           
     max-height: 100vh;
-    top: 0;                  /* fixa no topo */
+    top: 0;                  
     left: 0;
     transform: none;
-    border-radius: 0;        /* sem cantos arredondados */
+    border-radius: 0;       
   }
 
   .chatbot-header {
-    height: 3.5rem;          /* um pouco menor */
+    height: 3.5rem;          
     padding: 0.5rem 1rem;
   }
 
   .chatbot-messages {
-    padding: 0.5rem;
+    flex: 1;
     gap: 0.5rem;
+
   }
 
   .chatbot-input-container {
-    height: auto;
-    padding: 0.5rem;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0.5rem 1rem calc(1rem + env(safe-area-inset-bottom)) ;
+    margin-bottom: 8rem;
   }
 
   .chatbot-input {
