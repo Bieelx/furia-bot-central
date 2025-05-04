@@ -128,7 +128,7 @@ Este projeto é uma landing page da FURIA Esports que reúne:
     npm run dev
   3. Abra no navegador http://localhost:5173.
 ---
-## 🎬 **Uso**
+## 🎬 Uso
 
   <li>Clique no botão de chat no canto inferior direito para abrir o ChatDialog.
 
@@ -140,7 +140,7 @@ Este projeto é uma landing page da FURIA Esports que reúne:
 
 ---
 
-## 📱 **Responsividade**
+## 📱 Responsividade
 
   <h3> Mobile (≤640px):</h3>
   <li>Chat full-screen.
@@ -161,7 +161,7 @@ Este projeto é uma landing page da FURIA Esports que reúne:
 
 ---
 
-## 🤝 **Contribuição**
+## 🤝 Contribuição
 
   1. **Fork e clone este repositório.**
 

@@ -94,7 +94,13 @@ const Index = () => {
   }
 ];
 
-  const links = ["Loja", "Times", "Próximos Jogos", "Galeria"];
+  const links = [
+  { name: "Loja",           href: "https://furia.gg",   external: true  },
+  { name: "Times",          href: "#times",             external: false },
+  { name: "Próximos Jogos", href: "#jogos",             external: false },
+  { name: "Galeria",        href: "#media",             external: false },
+  ];
+
   const socialIcons = [
     { name: "X", img: twitter, url: "https://twitter.com/furia" },
     { name: "Instagram", img: instagram, url: "https://instagram.com/furiagg" },
@@ -106,9 +112,9 @@ const Index = () => {
 
 
   return (
+    
     <div className="index-container">
       <Navbar />
-
       {/* Banner Central */}
       <section className="banner-section">
         <div className="banner-background" style={{ backgroundImage: `url(${FuriaBanner})` }}>
@@ -120,12 +126,12 @@ const Index = () => {
             Bem-vindo à Experiência <span className="banner-highlight">FURIA</span>
           </h1>
           <p className="banner-subtitle">Where passion meets competition</p>
-          <Button className="cta-button">Explore</Button>
+          <Button className="cta-button">Explorar</Button>
         </div>
       </section>
 
       {/* Teams Section */}
-      <section className="teams-section">
+      <section className="teams-section" id='times'>
         <div className="teams-container">
           <div className="teams-header">
             <h2 className="teams-title">Nossos times</h2>
@@ -171,7 +177,7 @@ const Index = () => {
       
 
       {/* Upcoming Matches */}
-      <section className="matches-section">
+      <section className="matches-section" id='jogos'>
         <div className="matches-container">
           <h2 className="section-title">Próximos jogos</h2>
           <div className="matches-grid">
@@ -198,7 +204,7 @@ const Index = () => {
       </section>
 
       {/* Galeria */}
-      <section className="media-section">
+      <section className="media-section" id='media'>
         <div className="media-container">
           <div className="media-header">
             <h2 className="section-title">Galeria</h2>
@@ -220,53 +226,56 @@ const Index = () => {
         </div>
       </section>
 
-{/* Footer */}
-<footer className="footer-section">
-  <div className="footer-container">
-    
-    {/* Logo da FURIA */}
-    <div className="footer-about">
-      <img
-        src={FuriaLogo}
-        alt="FURIA Logo"
-        className="footer-logo"
-      />
-    </div>
+      {/* Footer */}
+      <footer className="footer-section">
+        <div className="footer-container">
+          
+          {/* Logo */}
+          <div className="footer-about">
+            <img src={FuriaLogo} alt="FURIA Logo" className="footer-logo" />
+          </div>
 
-    {/* Links */}
-    <div className="footer-links">
-      <h3 className="footer-title">Links</h3>
-      <div className="footer-link-grid">
-        {links.map((link, index) => (
-          <a key={index} href="#" className="footer-link">
-            {link}
-          </a>
-        ))}
-      </div>
-    </div>
+          {/* Links */}
+          <div className="footer-links">
+            <h3 className="footer-title">Links</h3>
+            <div className="footer-link-grid">
+              {links.map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  className="footer-link"
+                  // se for externo, abre em nova aba
+                  {...(link.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
 
-    {/* Social Media */}
-    <div className="footer-social">
-      <h3 className="footer-title">Siga FURIA</h3>
-      <div className="footer-icons">
-        {socialIcons.map((icon, index) => (
-          <a
-            key={index}
-            href={icon.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon"
-            aria-label={icon.name}
-          >
-            <img src={icon.img} alt={icon.name} className="social-img" />
-          </a>
-        ))}
-      </div>
-      <p className="footer-copy">© 2025 FURIA Esports. All rights reserved.</p>
-    </div>
-
-  </div>
-</footer>
+          {/* Social Media */}
+          <div className="footer-social">
+            <h3 className="footer-title">Siga FURIA</h3>
+            <div className="footer-icons">
+              {socialIcons.map((icon, i) => (
+                <a
+                  key={i}
+                  href={icon.url}
+                  className="social-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={icon.name}
+                >
+                  <img src={icon.img} alt={icon.name} className="social-img" />
+                </a>
+              ))}
+            </div>
+            <p className="footer-copy">© 2025 FURIA Esports. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
 
 
       {/* ChatBot botão*/}

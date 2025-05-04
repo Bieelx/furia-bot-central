@@ -10,16 +10,44 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Loja", icon: <ShoppingBag className="nav-icon" />, href: "https://furia.gg" },
-    { name: "Próximos jogos", icon: <Calendar className="nav-icon" />, href: "#jogos" },
-    { name: "Times", icon: <Users className="nav-icon" />, href: "#times" },
-    { name: "Mídia", icon: <Camera className="nav-icon" />, href: "#media" },
+    { name: "Loja",            icon: <ShoppingBag />, href: "https://furia.gg",   external: true },
+    { name: "Próximos jogos",  icon: <Calendar />,   href: "#jogos",           external: false },
+    { name: "Times",           icon: <Users />,      href: "#times",           external: false },
+    { name: "Mídia",           icon: <Camera />,     href: "#media",           external: false },
   ];
   
+
+  const renderLink = (item: typeof navItems[0]) => {
+    // Se for link externo, abre em nova aba
+    if (item.external) {
+      return (
+        <a
+          key={item.name}
+          href={item.href}
+          className="nav-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {item.icon}
+          <span>{item.name}</span>
+          <span className="nav-underline"></span>
+        </a>
+      );
+    }
+    // Link interno (âncora)
+    return (
+      <a key={item.name} href={item.href} className="nav-link">
+        {item.icon}
+        <span>{item.name}</span>
+        <span className="nav-underline"></span>
+      </a>
+    );
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
+        {/* Botão mobile */}
         <button
           className="mobile-menu-btn"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -27,54 +55,36 @@ const Navbar = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
+        {/* Lado esquerdo (dois primeiros itens) */}
         <div className="nav-left">
-          {navItems.slice(0, 2).map((item) => (
-            <a key={item.name} href="#" className="nav-link">
-              {item.icon}
-              <span>{item.name}</span>
-              <span className="nav-underline"></span>
-            </a>
-          ))}
+          {navItems.slice(0, 2).map(renderLink)}
         </div>
 
+        {/* Logo central */}
         <div className="nav-logo">
-          <img
-            src= {furialogo}
-            alt="FURIA Logo"
-            className="logo-img"
-          />
+          <img src={furialogo} alt="FURIA Logo" className="logo-img" />
         </div>
 
+        {/* Lado direito (dois últimos itens) */}
         <div className="nav-right">
-          {navItems.slice(2, 4).map((item) => (
-            <a key={item.name} href="#" className="nav-link">
-              {item.icon}
-              <span>{item.name}</span>
-              <span className="nav-underline"></span>
-            </a>
-          ))}
+          {navItems.slice(2).map(renderLink)}
         </div>
 
-        <div className="mobile-space"></div>
-      </div>
+        <div className="mobile-space" />
 
-      {isMenuOpen && (
-        <div className="mobile-nav">
-          <div className="mobile-nav-links">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href="#"
-                className="mobile-link"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.icon}
-                {item.name}
-              </a>
-            ))}
+        {/* Menu mobile */}
+        {isMenuOpen && (
+          <div className="mobile-nav">
+            <div className="mobile-nav-links">
+              {navItems.map(item => (
+                <div key={item.name} onClick={() => setIsMenuOpen(false)}>
+                  {renderLink(item)}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 };

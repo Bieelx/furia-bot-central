@@ -35,6 +35,12 @@ export default function ChatDialog({ open, onOpenChange }: ChatDialogProps) {
     setMessage("");
     setIsBotTyping(true);
 
+  const response = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ history: updated })
+    })
+
     try {
       const resp = await fetch('http://localhost:3001/api/chat', {
         method: 'POST',

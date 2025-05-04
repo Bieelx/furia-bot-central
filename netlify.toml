@@ -1,0 +1,10 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+  functions = "functions"
+
+[dev]
+  functions = "functions"
+
+[functions.environment]
+  GEMINI_API_KEY = AIzaSyBoOUhRv4AhaeLCaP9O9m2LR6Cy97vOm2A
