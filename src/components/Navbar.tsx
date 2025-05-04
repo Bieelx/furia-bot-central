@@ -72,7 +72,6 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <Button className="mobile-cta">Try Now</Button>
           </div>
         </div>
       )}

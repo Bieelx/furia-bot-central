@@ -1,0 +1,155 @@
+@import './theme.css';
+
+
+.team-details-dialog {
+  backdrop-filter: blur(12px);
+  background-color: var(--color-glass-bg) !important;
+  border: 1px solid var(--color-border-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding:  1rem;
+  display: flex;
+  flex-direction: column;
+  animation: scale-in 0.3s ease;
+  width: 700px; 
+  height: 600px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  }
+
+  .team-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .team-details-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-main);
+    transition: color 0.2s ease;
+  }
+  
+  .team-details-close-btn:hover {
+    color: var(--color-primary);
+  }
+  
+  .team-details-close-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .team-details-title {
+    font-size: 1.25rem;
+    margin: 0; 
+    color: var(--color-text-main);
+  }
+  
+
+  .chatbot-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-main);
+  }
+  
+  .team-details-title {
+    font-size: 1.25rem;  
+    margin: 0.5rem 0;      
+    text-align: center;
+  }
+  
+  .team-players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .player-card {
+    text-align: center;
+  }
+  
+  .player-photo {
+    width: 20vh;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  
+  .player-name {
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  
+  .player-role {
+    font-size: 0.9rem;
+  }
+  
+  /* ========== AJUSTES GERAIS ========== */
+.team-details-dialog {
+  /* centraliza e limita largura/altura */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 700px);
+  max-height: 80vh;
+  /* já tinha: */
+  backdrop-filter: blur(20px);
+  background-color: var(--color-glass-bg) !important;
+  border: 1px solid var(--color-border-light);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: scale-in 0.3s ease;
+  z-index: 100;
+}
+
+/* ========== MOBILE (≤ 640px) ========== */
+@media (max-width: 640px) {
+  .team-details-dialog {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 0.75rem;
+  }
+  .team-details-title {
+    font-size: 1rem;
+    margin: 0.75rem 0;
+  }
+  .team-players-grid {
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  .player-name {
+    font-size: 0.9rem;
+  }
+  .player-role {
+    font-size: 0.8rem;
+  }
+}
+
+/* ========== TABLET (641px–1024px) ========== */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .team-details-dialog {
+    width: 80vw;
+    max-width: 500px;
+    max-height: 85vh;
+  }
+  .team-details-title {
+    font-size: 1.15rem;
+    margin: 0.65rem 0;
+  }
+}

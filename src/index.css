@@ -556,3 +556,85 @@
 .team-button:hover {
   background-color: rgba(212, 175, 55, 0.8);
 }
+
+
+/* ========== RESPONSIVIDADE MOBILE (até 640px) ========== */
+@media (max-width: 640px) {
+  /* BANNER */
+  .banner-section {
+    height: 50vh; /* menos ocupação vertical */
+  }
+  .banner-title {
+    font-size: 2rem; /* de 3rem para 2rem */
+    margin-bottom: 1rem;
+  }
+  .banner-subtitle {
+    font-size: 1rem; /* de 1.25rem para 1rem */
+    margin-bottom: 1.5rem;
+  }
+  .cta-button {
+    font-size: 1rem;       /* de 1.125rem */
+    padding: 1rem 2rem;    /* reduzido */
+  }
+
+  /* TIMES */
+  .teams-section {
+    padding: 3rem 0.5rem; /* menos espaço */
+  }
+  .teams-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .teams-title {
+    font-size: 1.5rem; /* de 1.875rem */
+  }
+  .teams-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .team-display {
+    height: 250px; /* de 400px */
+  }
+
+  /* PRÓXIMOS JOGOS */
+  .matches-section {
+    padding: 3rem 0.5rem;
+  }
+  .matches-grid {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+  .match-card-content {
+    padding: 1rem; /* ajustado */
+  }
+
+  /* GALERIA */
+  .media-section {
+    padding: 3rem 0.5rem;
+  }
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FOOTER */
+  .footer-section {
+    padding: 2rem 0.5rem;
+  }
+  .footer-container {
+    gap: 1rem;
+  }
+
+  /* CHAT FLUTUANTE */
+  .chat-button-wrapper {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .chat-button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* BANNER CONTENT PADRÃO */
+  .banner-content {
+    padding: 0.5rem;
+  }
+}

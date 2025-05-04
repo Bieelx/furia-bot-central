@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navbar from '@/components/Navbar';
 import ChatDialog from '@/components/ChatDialog';
+import TeamDetailsDialog from "@/components/TeamDetailsDialog";
 
 import FuriaBanner from '../assets/FuriaBanner.webp';
 import FuriaLogo from '../assets/FuriaLogo.svg'
@@ -23,6 +24,12 @@ import lolbanner from '../assets/Lol Banner.webp';
 import twitter from '../assets/Xicon.svg'
 import instagram from '../assets/instagram.svg'
 import youtube from '../assets/youtube.svg'
+
+import cs2_fallen from '../assets/jogadores/cs2_fallen.webp';
+import cs2_kscerato from '../assets/jogadores/cs2_KSCERATO.webp';
+import cs2_yuurih from '../assets/jogadores/cs2_yuurih.webp';
+import cs2_molodoy from '../assets/jogadores/cs2_ Molodoy.png';
+import cs2_yekindar from '../assets/jogadores/cs2_yekindar.png';
 
 import '../Index.css';
 
@@ -51,23 +58,41 @@ const Index = () => {
   const teams = [
     {
       name: "CS2",
-      players: "KSCERATO, yuurih, FalleN, Molodoy, Yekindar",
+      players: [
+        { name: "KSCERATO", role: "Rifler", photo: cs2_kscerato },
+        { name: "yuurih", role: "Rifler", photo: cs2_yuurih },
+        { name: "FalleN", role: "AWPer / IGL", photo: cs2_fallen },
+        { name: "Molodoy", role: "Support", photo: cs2_molodoy },
+        { name: "Yekindar", role: "Entry", photo: cs2_yekindar }
+      ],      
       achievements: "ESL Pro League Season 16 Champions",
       image: cs2banner
     },
     {
-      name: "VALORANT",
-      players: "dgzin, Quick, Khalil, Mazin, frz",
-      achievements: "VCT Americas 2023 Finalists",
-      image: valorantbanner
-    },
-    {
-      name: "League of Legends",
-      players: "Guigo, Tatu, Tutsz, Ayu, JoJo",
-      achievements: "ALGS 2022 Split 2 Champions",
-      image: lolbanner
-    }
-  ];
+    name: "VALORANT",
+    players: [
+      { name: "dgzin", role: "Rifler", photo: cs2_yekindar },
+      { name: "Quick", role: "Rifler", photo: cs2_yekindar},
+      { name: "Khalil", role: "Rifler", photo: cs2_yekindar},
+      { name: "Mazin", role: "Rifler", photo: cs2_yekindar},
+      { name: "frz", role: "Rifler", photo: cs2_yekindar },
+    ],
+    achievements: "VCT Americas 2023 Finalists",
+    image: valorantbanner
+  },
+  {
+    name: "League of Legends",
+    players: [
+      { name: "Guigo", role: "Rifler", photo: cs2_yekindar },
+      { name: "Tatu", role: "Rifler", photo: cs2_yekindar},
+      { name: "Tutsz", role: "Rifler", photo: cs2_yekindar },
+      { name: "Ayu", role: "Rifler", photo: cs2_yekindar},
+      { name: "JoJo", role: "Rifler", photo: cs2_yekindar},
+    ],
+    achievements: "ALGS 2022 Split 2 Champions",
+    image: lolbanner
+  }
+];
 
   const links = ["Loja", "Times", "Próximos Jogos", "Galeria"];
   const socialIcons = [
@@ -76,6 +101,9 @@ const Index = () => {
     { name: "YouTube", img: youtube, url: "https://www.youtube.com/@FURIAgg" }
   ];
   
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+
+
 
   return (
     <div className="index-container">
@@ -121,14 +149,26 @@ const Index = () => {
             <div className="team-info">
               <h3 className="team-name">{teams[activeTeam].name}</h3>
               <div className="team-description">
-                <p>Jogadores: {teams[activeTeam].players}</p>
+                <p>  Jogadores: {teams[activeTeam].players.map(player => player.name).join(', ')}</p>
                 <p>Prêmios: {teams[activeTeam].achievements}</p>
               </div>
-              <Button className="team-button">Mais detalhes</Button>
+              <Button className="team-button" onClick={() => setIsDetailsOpen(true)}>
+                Mais detalhes
+              </Button>
+
             </div>
           </div>
         </div>
       </section>
+
+      <TeamDetailsDialog
+        open={isDetailsOpen}
+        onOpenChange={setIsDetailsOpen}
+        players={teams[activeTeam].players.map(({ name, role, photo }) => ({ name, role, photo }))}
+        teamName={teams[activeTeam].name}
+      />
+
+      
 
       {/* Upcoming Matches */}
       <section className="matches-section">

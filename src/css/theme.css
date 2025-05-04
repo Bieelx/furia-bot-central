@@ -1,0 +1,10 @@
+:root {
+    --color-glass-bg: rgba(250, 249, 246, 0.3);
+    --color-primary: #D4AF37;
+    --color-primary-hover: rgba(212, 175, 55, 0.85);
+    --color-border-light: rgba(250, 249, 246, 0.5);
+    --color-bot-bg: #fdf5dc;
+    --color-user-bg: #D4AF37;
+    --color-text-main: #1A1F2C;
+    --color-placeholder: rgba(0, 0, 0, 0.7);
+  }
