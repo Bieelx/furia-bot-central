@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import ChatBubble from "./ChatBubble";
 import { Button } from "@/components/ui/button";
-import "../css/chatDialog.css";
+import "../css/ChatDialog.css";
 
 type ChatMessage = 
   | { role: 'user'; content: string }
