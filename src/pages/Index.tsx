@@ -8,7 +8,7 @@ import TeamDetailsDialog from "@/components/TeamDetailsDialog";
 
 import FuriaBanner from '../assets/FuriaBanner.webp';
 import FuriaLogo from '../assets/FuriaLogo.svg'
-import post1 from '../assets/post1.jpeg';
+import post1 from '../assets/Post1.jpeg';
 import post2 from '../assets/post2.jpeg';
 import post3 from '../assets/post3.jpg';
 import post4 from '../assets/post4.jpg';
