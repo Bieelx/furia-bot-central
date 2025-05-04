@@ -17,9 +17,9 @@ import post6 from '../assets/post6.jpg';
 import post7 from '../assets/post7.jpg';
 import post8 from '../assets/post8.jpg';
 
-import cs2banner from '../assets/cs2banner.webp';
-import valorantbanner from '../assets/valorant.jpg';
-import lolbanner from '../assets/Lol Banner.webp';
+import cs2banner from '../assets/Cs2Banner.webp';
+import valorantbanner from '../assets/Valorant.jpg';
+import lolbanner from '../assets/LolBanner.webp';
 
 import twitter from '../assets/Xicon.svg'
 import instagram from '../assets/instagram.svg'
@@ -28,7 +28,7 @@ import youtube from '../assets/youtube.svg'
 import cs2_fallen from '../assets/jogadores/cs2_fallen.webp';
 import cs2_kscerato from '../assets/jogadores/cs2_KSCERATO.webp';
 import cs2_yuurih from '../assets/jogadores/cs2_yuurih.webp';
-import cs2_molodoy from '../assets/jogadores/cs2_ Molodoy.png';
+import cs2_molodoy from '../assets/jogadores/cs2_Molodoy.png';
 import cs2_yekindar from '../assets/jogadores/cs2_yekindar.png';
 
 import '../Index.css';
