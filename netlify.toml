@@ -7,4 +7,4 @@
   functions = "functions"
 
 [functions.environment]
-  GEMINI_API_KEY = "AIzaSyDH7lhDNSoQeOcOhkWbDc3gveEsOYUPOng"
+  GEMINI_API_KEY = ""
