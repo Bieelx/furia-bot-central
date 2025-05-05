@@ -5,7 +5,7 @@ exports.handler = async function (event) {
     const { history } = JSON.parse(event.body);
 
     const response = await axios.post(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
       {
         contents: [
           {
